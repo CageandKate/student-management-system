@@ -22,7 +22,7 @@ def input_int_range(prompt,min_value,max_value):
 def main():
     manager = StudentManager()
     while True:
-        print("====== 学生管理系统 ======")
+        print("====== Python 学生管理系统 ======")
         print("1. 添加学生")
         print("2. 查看所有学生")
         print("3. 查询学生")
@@ -70,7 +70,9 @@ def main():
 
         elif choice == 2:
             print("=====2. 查看所有学生信息=====")
-            manager.show_students()
+            if not manager.show_students():
+                print("暂无学生")
+            
 
         elif choice == 3:
             print("=====3. 查询学生=====")
