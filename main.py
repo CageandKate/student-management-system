@@ -70,16 +70,24 @@ def main():
 
         elif choice == 2:
             print("=====2. 查看所有学生信息=====")
-            if not manager.show_students():
-                print("暂无学生")
+            i = input_int_range("若按成绩降序输出请输入1，升序输出请输入2，默认输出请输入0,请输入：",0,2)
+            if i == 1:
+                manager.show_students_by_score(True)
+            elif i == 2:
+                manager.show_students_by_score(False)
+            elif i == 0:
+                if not manager.show_students():
+                    print("暂无学生")
             
 
         elif choice == 3:
             print("=====3. 查询学生=====")
-            student_id = int(input("请输入要查询学生的id："))
+            student_id = input_int("请输入要查询学生的id：")
+            if student_id is None:
+                continue
             result = manager.find_student_by_id(student_id)
             if result is not None:
-                result.show_info()
+                print(result)
             else:
                 print("无该生")
 

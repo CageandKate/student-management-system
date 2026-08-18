@@ -47,7 +47,7 @@ class Student :
         return True
 
     def update_age(self, new_age):
-        if not self.is_valid_score(new_age):
+        if not self.is_valid_age(new_age):
             return False
         
         self.age = new_age

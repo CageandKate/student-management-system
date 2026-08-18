@@ -72,5 +72,11 @@ class StudentManager:
         self.save_students()   
         return True
 
-    def score_sort(self):
-        pass
+    def show_students_by_score(self, reverse = True):
+        sorted_students = sorted(
+            self.students,
+            key = lambda student:student.score,
+            reverse=reverse
+        )
+        for student in sorted_students:
+            print(student)
