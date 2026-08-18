@@ -71,3 +71,6 @@ class StudentManager:
         self.students.remove(student) 
         self.save_students()   
         return True
+
+    def score_sort(self):
+        pass
