@@ -72,9 +72,12 @@ def main():
             print("=====2. 查看所有学生信息=====")
             i = input_int_range("若按成绩降序输出请输入1，升序输出请输入2，默认输出请输入0,请输入：",0,2)
             if i == 1:
-                manager.show_students_by_score(True)
+                if not manager.show_students_by_score(True):
+                    print("暂无学生")
+
             elif i == 2:
-                manager.show_students_by_score(False)
+                if not manager.show_students_by_score(False):
+                    print("暂无学生")
             elif i == 0:
                 if not manager.show_students():
                     print("暂无学生")

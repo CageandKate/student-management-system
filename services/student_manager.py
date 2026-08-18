@@ -49,6 +49,7 @@ class StudentManager:
             return False
         for student in self.students:
             print(student)
+        print(f"共有：{self.get_student_count()}名学生")
         return True
 
 
@@ -73,6 +74,8 @@ class StudentManager:
         return True
 
     def show_students_by_score(self, reverse = True):
+        if not self.students:
+            return False
         sorted_students = sorted(
             self.students,
             key = lambda student:student.score,
@@ -80,3 +83,8 @@ class StudentManager:
         )
         for student in sorted_students:
             print(student)
+        print(f"共有：{self.get_student_count()}名学生")
+        return True
+      
+    def get_student_count(self):
+        return len(self.students)
